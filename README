@@ -8,6 +8,7 @@ Requirements
 
 Plugin Installation
 
+    cd ~/src
     git clone git://github.com/jk0/irssi-growl.git
     ln -s ~/src/irssi-growl/irssi-growl.pl ~/.irssi/scripts/autorun/
 
@@ -16,7 +17,12 @@ Plugin Installation
 
 Notifier Installation
 
+    cd ~/src
     git clone git://github.com/jk0/irssi-growl.git
 
     cat ~/src/irssi-growl/config.example >> ~/.ssh/config
     vim ~/.ssh/config
+
+        - Set 'Hostname' to your irssi instance's host
+        - Set your irssi instance's username and host for LocalCommand
+        - Ensure the path to notify.sh is valid
