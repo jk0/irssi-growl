@@ -1,0 +1,3 @@
+Host domain.tld
+  LocalCommand ~/src/irssi-growl/notify.sh user@domain.tld
+  PermitLocalCommand yes

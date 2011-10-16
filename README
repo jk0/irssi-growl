@@ -1,0 +1,17 @@
+irssi-growl - Send Growl notifications upon new mentions or PMs.
+
+
+Requirements
+
+    - GrowlNotify
+
+
+Installation
+
+    git clone git://github.com/jk0/irssi-growl.git
+    ln -s ~/src/irssi-growl/irssi-growl.pl ~/.irssi/scripts/autorun/
+
+    cat config.example >> ~/.ssh/config
+    vim ~/.ssh/config
+
+    /script load autorun/irssi-growl.pl
