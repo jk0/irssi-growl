@@ -6,12 +6,17 @@ Requirements
     - GrowlNotify
 
 
-Installation
+Plugin Installation
 
     git clone git://github.com/jk0/irssi-growl.git
     ln -s ~/src/irssi-growl/irssi-growl.pl ~/.irssi/scripts/autorun/
 
-    cat config.example >> ~/.ssh/config
-    vim ~/.ssh/config
-
     /script load autorun/irssi-growl.pl
+
+
+Notifier Installation
+
+    git clone git://github.com/jk0/irssi-growl.git
+
+    cat ~/src/irssi-growl/config.example >> ~/.ssh/config
+    vim ~/.ssh/config
