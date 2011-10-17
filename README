@@ -12,8 +12,6 @@ Plugin Installation
     git clone git://github.com/jk0/irssi-growl.git
     ln -s ~/src/irssi-growl/irssi-growl.pl ~/.irssi/scripts/autorun/
 
-    mkfifo ~/.irssi/growl
-
     /script load autorun/irssi-growl.pl
 
 

@@ -18,7 +18,7 @@ use warnings;
 use Irssi;
 use vars qw($VERSION %IRSSI);
 
-$VERSION = "0.0.3";
+$VERSION = "0.0.4";
 
 %IRSSI = (
     authors => "Josh Kearney",
@@ -53,9 +53,9 @@ sub msg_private {
 sub write_msg {
     my ($msg) = @_;
 
-    open FIFO, ">> $ENV{HOME}/.irssi/growl";
-    print FIFO "$msg\n";
-    close FIFO;
+    open FILE, ">>", "$ENV{HOME}/.irssi/growl";
+    print FILE "$msg\n";
+    close FILE;
 }
 
 Irssi::signal_add_last("print text", "msg_public");

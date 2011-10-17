@@ -14,9 +14,11 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+GROWL_FILE=.irssi/growl
+
 ps ax | awk '{if($0 ~ /.irssi\/growl/ && $1 ~ /[0-9]+/ && $4 !~ /awk/) print $1}' |
 while read pid; do
 kill -INT $pid
 done
 
-tail -f .irssi/growl
+rm -f $GROWL_FILE && touch $GROWL_FILE && tail -f $GROWL_FILE
