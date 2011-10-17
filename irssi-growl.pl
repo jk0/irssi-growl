@@ -18,7 +18,7 @@ use warnings;
 use Irssi;
 use vars qw($VERSION %IRSSI);
 
-$VERSION = "0.0.2";
+$VERSION = "0.0.3";
 
 %IRSSI = (
     authors => "Josh Kearney",
@@ -31,15 +31,16 @@ $VERSION = "0.0.2";
 
 sub msg_public {
     my ($dest, $text, $stripped) = @_;
+    my ($nick, $message) = split(/ +/, $stripped, 2);
+
+    my $level = $dest->{level};
     my $server = $dest->{server};
     my $channel = $dest->{target};
 
-    my @line = split(/\>/, $stripped, 2);
-    my $nick = substr($line[0], 1);
-    my $message = $line[1];
+    $nick = substr($nick, 1, -1) if $nick;
 
-    if($dest->{level} & MSGLEVEL_HILIGHT) {
-        write_msg("$server->{chatnet} [$channel:$nick]$message");
+    if(($level & MSGLEVEL_HILIGHT) && ($level & MSGLEVEL_NOHILIGHT) == 0) {
+        write_msg("$server->{chatnet} [$channel:$nick] $message");
     }
 }
 
