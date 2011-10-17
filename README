@@ -26,3 +26,7 @@ Notifier Installation
         - Set 'Hostname' to your irssi instance's host
         - Set your irssi instance's username and host for LocalCommand
         - Ensure the path to notify.sh is valid
+
+    vim ~/src/irssi-growl/notify.sh
+
+        - Ensure the path to irssi-growl.sh is valid

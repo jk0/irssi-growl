@@ -14,12 +14,9 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-ps | awk '{if($0 ~ /\> \.irssi\/growl/ && $1 ~ /[0-9]+/ && $4 !~ /awk/) print $1}' |
+ps ax | awk '{if($0 ~ /.irssi\/growl/ && $1 ~ /[0-9]+/ && $4 !~ /awk/) print $1}' |
 while read pid; do
 kill $pid
 done
 
-(ssh $1 -o PermitLocalCommand=no "~/src/irssi-growl/irssi-growl.sh" |
-while read network message; do
-growlnotify -t "${network}" -m "${message}";
-done)&
+tail -f .irssi/growl
