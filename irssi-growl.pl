@@ -51,11 +51,11 @@ sub msg_private {
 }
 
 sub write_msg {
-    my ($text) = @_;
+    my ($msg) = @_;
 
-    open(FILE, ">>$ENV{HOME}/.irssi/growl");
-    print FILE "$text\n";
-    close(FILE);
+    open FIFO, ">> $ENV{HOME}/.irssi/growl";
+    print FIFO "$msg\n";
+    close FIFO;
 }
 
 Irssi::signal_add_last("print text", "msg_public");
