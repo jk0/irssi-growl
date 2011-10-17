@@ -16,7 +16,7 @@
 
 ps ax | awk '{if($0 ~ /.irssi\/growl/ && $1 ~ /[0-9]+/ && $4 !~ /awk/) print $1}' |
 while read pid; do
-kill $pid
+kill -INT $pid
 done
 
 tail -f .irssi/growl
